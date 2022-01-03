@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        h1,h2 {
+            font-family: 'Francois One',sans-serif;
+            text-shadow: 0 0 0.2em rgb(178, 177, 185),
+                0 0 0.2em rgb(207, 206, 216),
+                0 0 0.2em rgb(186, 184, 201);
+        }
+
+       
+    </style></title>
+</head>
+<body>
+    <div id="score">
+        <div style="font-size:48px"  >
+
+                <h1 ALIGN="center">Emoji</h1>
+                <div ALIGN="center"  onclick="emo()" onload="changePic()">
+                    
+                <a  v-on:click= "(counter+= 10)(Like +=1)"  >{{Like}}&#128512; </a>
+                <a  v-on:click = "(counter+= 20)(Love +=1)" >{{Love}}&#128525;</a>
+                <a  v-on:click= "(counter+= 25)(Laugh +=1)" >{{Laugh}}&#128516;</a>
+                <a  v-on:click = "(counter+= 30)(Wow +=1)" >{{Wow}}&#128559;</a>
+                <a  v-on:click = "(counter-=15)(Sad  +=1)" >{{Sad}}&#128549;</a>
+                <a  v-on:click = "(counter-=50)(Angry +=1)" >{{Angry}}&#129324;</a>     
+        </div>
+        <div STYLE="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h1 ALIGN="center">score {{counter}}</h1>
+            
+            <h2 ALIGN="center" id="point"></h2>
+        </div>
+        
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var example = new Vue({
+        el:'#score',
+        data:{
+            Like :0,
+            Love :0,
+            Laugh :0,
+            Wow :0,
+            Sad :0,
+            Angry :0,
+            counter :0
+        },
+            methods :{
+                emoji:function(event){
+
+                }
+            }
+
+
+    })
+</script>
